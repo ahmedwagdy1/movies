@@ -1,0 +1,21 @@
+<section class="bg-black text-white">
+    <div class="container py-5">
+
+        <div class="title ps-3">
+            <h1 class="text-danger fw-bolder">MOVIES</h1>
+        </div>
+
+        <div class="row py-3">
+            @for (res of data; track $index) {
+            <div class="col-md-3 my-1">
+                <div class="p-3 ">
+                    <img src="{{image + res.poster_path}}" alt="" class="w-100">
+                    <h2 class="pt-2">{{(res.title ? res.title : res.name).split(' ').slice(0,3).join(' ')}}</h2>
+                    <p class="text">{{res.overview.split(' ').slice(0,5).join(' ')}}</p>
+                    <p class="lead">{{res.genre_ids}}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
